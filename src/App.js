@@ -9,13 +9,7 @@ const App = () => (
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-        alt="siema"
-      >
+      <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React leioufhbW[EOGHNSDLKVBNDSLKDNFS,
         MDNSDJVNS/sdjkgnspougb;eouithw;eignsldjgbs;doigb;
         sdikngLDKVNS,DVNSLIDHVNLSM,NVSLDKNVFSLDKNVLSDKVLSODHNVndfslidns ;djnsubduflsinfid
