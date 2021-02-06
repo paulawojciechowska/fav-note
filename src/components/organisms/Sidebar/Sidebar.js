@@ -16,7 +16,7 @@ const StyledWrapper = styled.nav`
   padding: 25px 0;
   width: 153px;
   height: 100vh;
-  background-color: ${({ activeColor, theme }) => (activeColor ? theme[activeColor] : theme.note)};
+  background-color: ${({ activeColor, theme }) => (activeColor ? theme[activeColor] : theme.notes)};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,23 +49,23 @@ const Sidebar = ({ sidebarType }) => (
     <StyledLogo to="/" />
     <IconsWrapper>
       <li>
-        <ButtonIcon exact as={NavLink} to="/notes" icon={penIcon} activeclass="active" />
+        <ButtonIcon as={NavLink} to="/notes" icon={penIcon} activeclass="active" />
       </li>
       <li>
-        <ButtonIcon as={NavLink} to="/twitter" icon={twitterIcon} activeclass="active" />
+        <ButtonIcon as={NavLink} to="/twitters" icon={twitterIcon} activeclass="active" />
       </li>
       <li>
         <ButtonIcon as={NavLink} to="/articles" icon={bulbIcon} activeclass="active" />
       </li>
     </IconsWrapper>
-    <StyledLogOutButton as={NavLink} to="/" icon={logoutIcon} />
+    <StyledLogOutButton as={NavLink} to="/login" icon={logoutIcon} />
   </StyledWrapper>
 );
 Sidebar.propTypes = {
-  sidebarType: PropTypes.oneOf(['note', 'twitter', 'article']),
+  sidebarType: PropTypes.oneOf(['notes', 'twitters', 'articles']),
 };
 
 Sidebar.defaultProps = {
-  sidebarType: 'note',
+  sidebarType: 'notes',
 };
 export default Sidebar;
