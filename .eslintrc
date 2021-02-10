@@ -9,9 +9,11 @@
     "jest": true
   },
   "globals": {
-    "document": true
+    "document": true,
+    "window": true
   },
   "rules": {
+    "no-unused-vars": 0,
     "default-case": 0,
     "react/destructuring-assignment": 0,
     "react/state-in-constructor": 0,
