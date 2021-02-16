@@ -4,10 +4,9 @@ import GridTemplate from 'templates/GridTemplate';
 import Card from 'components/molecules/Card/Card';
 
 const Articles = ({ articles }) => (
-  <GridTemplate sidebarType="articles">
+  <GridTemplate>
     {articles.map(({ id, title, content, articleUrl, created }) => (
       <Card
-        cardType="articles"
         id={id}
         title={title}
         content={content}

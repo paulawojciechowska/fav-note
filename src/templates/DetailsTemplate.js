@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Button from 'components/atoms/Button/Button';
+import withContext from 'components/hoc/withContext';
 import UserPageTemplate from './UserPageTemplate';
 
 const StyledWrapper = styled.div`
@@ -53,8 +54,8 @@ const StyledLink = styled.a`
   font-weight: ${({ theme }) => theme.bold};
 `;
 
-const DetailsTemplate = ({ sidebarType, title, created, content, twitterUrl, articleUrl }) => (
-  <UserPageTemplate sidebarType={sidebarType}>
+const DetailsTemplate = ({ pageContext, title, created, content, twitterUrl, articleUrl }) => (
+  <UserPageTemplate>
     <StyledWrapper>
       <HeadingWrapper>
         <StyledHeaderWrapper>
@@ -63,19 +64,19 @@ const DetailsTemplate = ({ sidebarType, title, created, content, twitterUrl, art
           </Heading>
           <DateInfo>CREATED {created}</DateInfo>
         </StyledHeaderWrapper>
-        {sidebarType === 'twitters' && <StyledImage src={twitterUrl} />}
+        {pageContext === 'twitters' && <StyledImage src={twitterUrl} />}
       </HeadingWrapper>
       <StyledParagraph>{content}</StyledParagraph>
-      {sidebarType === 'articles' && <StyledLink href={articleUrl}>{articleUrl}</StyledLink>}
-      <StyledLink href={`/${sidebarType}`}>
-        <Button activeColor={sidebarType}>save / close</Button>
+      {pageContext === 'articles' && <StyledLink href={articleUrl}>{articleUrl}</StyledLink>}
+      <StyledLink href={`/${pageContext}`}>
+        <Button activeColor={pageContext}>save / close</Button>
       </StyledLink>
     </StyledWrapper>
   </UserPageTemplate>
 );
 
 DetailsTemplate.propTypes = {
-  sidebarType: PropTypes.oneOf(['notes', 'twitters', 'articles']).isRequired,
+  pageContext: PropTypes.oneOf(['notes', 'twitters', 'articles']).isRequired,
   title: PropTypes.string,
   created: PropTypes.string,
   content: PropTypes.string,
@@ -91,4 +92,4 @@ DetailsTemplate.defaultProps = {
   twitterUrl: '',
 };
 
-export default DetailsTemplate;
+export default withContext(DetailsTemplate);

@@ -13,6 +13,7 @@
     "window": true
   },
   "rules": {
+    "react/no-unused-state": 0,
     "no-unused-vars": 0,
     "default-case": 0,
     "react/destructuring-assignment": 0,

@@ -5,16 +5,9 @@ import GridTemplate from 'templates/GridTemplate';
 import Card from 'components/molecules/Card/Card';
 
 const Twitter = ({ twitters }) => (
-  <GridTemplate sidebarType="twitters">
+  <GridTemplate>
     {twitters.map(({ id, title, content, created }) => (
-      <Card
-        id={id}
-        cardType="twitters"
-        title={title}
-        content={content}
-        created={created}
-        key={id}
-      />
+      <Card id={id} title={title} content={content} created={created} key={id} />
     ))}
   </GridTemplate>
 );
